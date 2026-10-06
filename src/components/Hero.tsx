@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, ShieldCheck, Eye, Lock, Clock, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
+import { MessageCircle, ShieldCheck, Eye, Lock, Clock, Zap, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { WHATSAPP_URL } from '../data/standaloneHtml';
+
+// Import direct des vraies captures et interfaces de l'application STREAM PREMIUM
+// Vite garantit que ces assets sont automatiquement hashés et déployés sur Vercel sans risque de 404
+import heroMockup from '../assets/images/hero_streaming_app_1791308227179.jpg';
+import catalogMockup from '../assets/images/screenshot_catalog_1791308241198.jpg';
+import playerMockup from '../assets/images/screenshot_player_1791308251674.jpg';
+import kidsMockup from '../assets/images/screenshot_kids_1791308261932.jpg';
 
 interface HeroProps {
   onOpenDescription: () => void;
@@ -11,31 +18,43 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDescription }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // 3 Placeholders d'images pour le catalogue et les interfaces
+  // Vraies images du contenu de l'application avec fallbacks multi-niveaux pour Vercel
   const slides = [
     {
       id: "hero-slide-1",
-      title: "Catalogue Films & Séries",
-      badge: "Catalogue +3 700 Titres",
-      sub: "Films récents, séries et animes en VF/VOSTFR",
-      src: "/src/assets/images/screenshot_catalog_1791308241198.jpg",
-      alt: "Interface du catalogue STREAM PREMIUM",
+      title: "STREAM PREMIUM sur Smartphone Android",
+      badge: "Interface Officielle Android",
+      sub: "Design sombre moderne, fluidité totale et navigation ultra-rapide",
+      src: heroMockup,
+      fallback: "/images/hero.jpg",
+      alt: "Présentation de STREAM PREMIUM sur smartphone Android",
     },
     {
       id: "hero-slide-2",
-      title: "Lecteur 4K & Mode Hors-Ligne",
-      badge: "Ultra HD & Téléchargement",
-      sub: "Visionnage fluide et téléchargement 1-clic pour vos trajets",
-      src: "/src/assets/images/screenshot_player_1791308251674.jpg",
-      alt: "Lecteur vidéo 4K et téléchargement hors-ligne",
+      title: "Catalogue Films, Séries & Animes",
+      badge: "Catalogue +3 700 Titres",
+      sub: "Films récents, séries et animes en qualité 4K / HD sans pub",
+      src: catalogMockup,
+      fallback: "/images/catalog.jpg",
+      alt: "Interface du catalogue STREAM PREMIUM",
     },
     {
       id: "hero-slide-3",
-      title: "Espace Jeunesse & Sécurité",
+      title: "Lecteur 4K HDR & Mode Hors-Ligne",
+      badge: "Ultra HD & Téléchargement",
+      sub: "Visionnage sans coupure et téléchargement 1-clic pour vos trajets",
+      src: playerMockup,
+      fallback: "/images/player.jpg",
+      alt: "Lecteur vidéo 4K et téléchargement hors-ligne STREAM PREMIUM",
+    },
+    {
+      id: "hero-slide-4",
+      title: "Espace Jeunesse & Sécurité Enfants",
       badge: "100% Sans Pub & Protégé",
-      sub: "Dessins animés et contenus tous publics sans interruption",
-      src: "/src/assets/images/screenshot_kids_1791308261932.jpg",
-      alt: "Espace enfants et catégories sécurisées",
+      sub: "Dessins animés, animes et séries familiales sans inscription",
+      src: kidsMockup,
+      fallback: "/images/kids.jpg",
+      alt: "Espace enfants et catégories sécurisées STREAM PREMIUM",
     },
   ];
 
@@ -127,6 +146,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDescription }) => {
                     src={slide.src}
                     alt={slide.alt}
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement;
+                      if (!target.dataset.triedFallback) {
+                        target.dataset.triedFallback = '1';
+                        target.src = slide.fallback;
+                      } else if (!target.dataset.triedRoot) {
+                        target.dataset.triedRoot = '1';
+                        target.src = slide.fallback.replace('/images/', '/');
+                      }
+                    }}
                     className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
                   />
 

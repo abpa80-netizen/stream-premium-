@@ -91,45 +91,59 @@ export const STANDALONE_HTML_CODE = `<!DOCTYPE html>
       <div class="pt-2 max-w-lg mx-auto relative group">
         <div class="relative rounded-2xl overflow-hidden bg-black border-2 border-neutral-700 shadow-2xl transition-all duration-300 hover:border-red-600/60 hover:shadow-red-950/40">
           <div class="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden bg-neutral-950">
-            <!-- Slide 1 -->
+            <!-- Slide 1 : Mockup Smartphone Streaming App -->
             <div id="slide-0" class="hero-carousel-slide absolute inset-0 opacity-100 transition-opacity duration-700">
-              <img id="hero-slide-1" src="/src/assets/images/screenshot_catalog_1791308241198.jpg" alt="Catalogue STREAM PREMIUM" class="w-full h-full object-cover object-top" />
+              <img id="hero-slide-1" src="images/hero.jpg" onerror="this.onerror=null; this.src='hero.jpg';" alt="Application STREAM PREMIUM sur Smartphone Android" class="w-full h-full object-cover object-top" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/30"></div>
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-xs z-10">
+                <span class="bg-[#E50914] text-white font-black px-2.5 py-0.5 rounded text-[10px] uppercase">Interface Officielle Android</span>
+                <span class="bg-black/75 border border-neutral-700 text-neutral-300 font-mono text-[10px] px-2 py-0.5 rounded">1 / 4</span>
+              </div>
+              <div class="absolute bottom-2.5 left-3 right-3 text-left z-10">
+                <div class="text-white font-black text-sm">STREAM PREMIUM sur Smartphone Android</div>
+                <div class="text-neutral-300 text-[11px]">Design sombre moderne, fluidité totale et navigation ultra-rapide</div>
+              </div>
+            </div>
+
+            <!-- Slide 2 : Catalogue -->
+            <div id="slide-1" class="hero-carousel-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700">
+              <img id="hero-slide-2" src="images/catalog.jpg" onerror="this.onerror=null; this.src='catalog.jpg';" alt="Catalogue STREAM PREMIUM" class="w-full h-full object-cover object-top" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/30"></div>
               <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-xs z-10">
                 <span class="bg-[#E50914] text-white font-black px-2.5 py-0.5 rounded text-[10px] uppercase">Catalogue +3 700 Titres</span>
-                <span class="bg-black/75 border border-neutral-700 text-neutral-300 font-mono text-[10px] px-2 py-0.5 rounded">1 / 3</span>
+                <span class="bg-black/75 border border-neutral-700 text-neutral-300 font-mono text-[10px] px-2 py-0.5 rounded">2 / 4</span>
               </div>
               <div class="absolute bottom-2.5 left-3 right-3 text-left z-10">
-                <div class="text-white font-black text-sm">Catalogue Films & Séries</div>
-                <div class="text-neutral-300 text-[11px]">Films récents, séries et animes en VF/VOSTFR</div>
+                <div class="text-white font-black text-sm">Catalogue Films, Séries & Animes</div>
+                <div class="text-neutral-300 text-[11px]">Films récents, séries et animes en qualité 4K / HD sans pub</div>
               </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div id="slide-1" class="hero-carousel-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700">
-              <img id="hero-slide-2" src="/src/assets/images/screenshot_player_1791308251674.jpg" alt="Lecteur 4K et mode hors-ligne" class="w-full h-full object-cover object-top" />
+            <!-- Slide 3 : Lecteur 4K -->
+            <div id="slide-2" class="hero-carousel-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700">
+              <img id="hero-slide-3" src="images/player.jpg" onerror="this.onerror=null; this.src='player.jpg';" alt="Lecteur 4K et mode hors-ligne" class="w-full h-full object-cover object-top" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/30"></div>
               <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-xs z-10">
                 <span class="bg-[#E50914] text-white font-black px-2.5 py-0.5 rounded text-[10px] uppercase">Ultra HD & Téléchargement</span>
-                <span class="bg-black/75 border border-neutral-700 text-neutral-300 font-mono text-[10px] px-2 py-0.5 rounded">2 / 3</span>
+                <span class="bg-black/75 border border-neutral-700 text-neutral-300 font-mono text-[10px] px-2 py-0.5 rounded">3 / 4</span>
               </div>
               <div class="absolute bottom-2.5 left-3 right-3 text-left z-10">
-                <div class="text-white font-black text-sm">Lecteur 4K & Mode Hors-Ligne</div>
-                <div class="text-neutral-300 text-[11px]">Visionnage fluide et téléchargement 1-clic pour vos trajets</div>
+                <div class="text-white font-black text-sm">Lecteur 4K HDR & Mode Hors-Ligne</div>
+                <div class="text-neutral-300 text-[11px]">Visionnage sans coupure et téléchargement 1-clic pour vos trajets</div>
               </div>
             </div>
 
-            <!-- Slide 3 -->
-            <div id="slide-2" class="hero-carousel-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700">
-              <img id="hero-slide-3" src="/src/assets/images/screenshot_kids_1791308261932.jpg" alt="Espace Jeunesse sécurisé" class="w-full h-full object-cover object-top" />
+            <!-- Slide 4 : Espace Jeunesse -->
+            <div id="slide-3" class="hero-carousel-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700">
+              <img id="hero-slide-4" src="images/kids.jpg" onerror="this.onerror=null; this.src='kids.jpg';" alt="Espace Jeunesse sécurisé" class="w-full h-full object-cover object-top" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/30"></div>
               <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-xs z-10">
                 <span class="bg-[#E50914] text-white font-black px-2.5 py-0.5 rounded text-[10px] uppercase">100% Sans Pub & Protégé</span>
-                <span class="bg-black/75 border border-neutral-700 text-neutral-300 font-mono text-[10px] px-2 py-0.5 rounded">3 / 3</span>
+                <span class="bg-black/75 border border-neutral-700 text-neutral-300 font-mono text-[10px] px-2 py-0.5 rounded">4 / 4</span>
               </div>
               <div class="absolute bottom-2.5 left-3 right-3 text-left z-10">
-                <div class="text-white font-black text-sm">Espace Jeunesse & Sécurité</div>
-                <div class="text-neutral-300 text-[11px]">Dessins animés et contenus tous publics sans interruption</div>
+                <div class="text-white font-black text-sm">Espace Jeunesse & Sécurité Enfants</div>
+                <div class="text-neutral-300 text-[11px]">Dessins animés, animes et séries familiales sans inscription</div>
               </div>
             </div>
           </div>
@@ -148,6 +162,7 @@ export const STANDALONE_HTML_CODE = `<!DOCTYPE html>
           <button onclick="setHeroSlide(0)" class="hero-dot w-7 h-1.5 rounded-full bg-[#E50914] transition-all"></button>
           <button onclick="setHeroSlide(1)" class="hero-dot w-2 h-1.5 rounded-full bg-neutral-700 transition-all"></button>
           <button onclick="setHeroSlide(2)" class="hero-dot w-2 h-1.5 rounded-full bg-neutral-700 transition-all"></button>
+          <button onclick="setHeroSlide(3)" class="hero-dot w-2 h-1.5 rounded-full bg-neutral-700 transition-all"></button>
         </div>
 
         <p class="text-[11px] text-neutral-400 mt-1 italic">
@@ -428,7 +443,7 @@ export const STANDALONE_HTML_CODE = `<!DOCTYPE html>
 
     // Carrousel automatique Hero
     let currentHeroSlide = 0;
-    const totalHeroSlides = 3;
+    const totalHeroSlides = 4;
 
     function updateHeroSlideUI() {
       for (let i = 0; i < totalHeroSlides; i++) {
