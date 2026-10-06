@@ -1,0 +1,6 @@
+{
+  "name": "STREAM PREMIUM - Films & Séries sur Android (20 MAD)",
+  "description": "Vos films et séries préférés réunis au même endroit sur smartphones et tablettes Android pour 20 MAD seulement à vie. Zéro pub, téléchargement hors-ligne et activation WhatsApp instantanée.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
